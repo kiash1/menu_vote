@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.idea
+.DS_Store
+menu_vote/__pycache__
+menu_vote/base/__pycache__
+menu_vote/menus/__pycache__
+menu_vote/restaurants/__pycache__
+menu_vote/users/__pycache__
+menu_vote/votes/__pycache__
