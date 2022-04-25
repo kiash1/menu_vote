@@ -1,0 +1,4 @@
+POSTGRES_USER=menu_vote
+POSTGRES_PASSWORD=menu_vote
+POSTGRES_DB=menu_vote
+PGDATA=/var/lib/postgresql/data/pgdata

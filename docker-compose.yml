@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    environment:
+      POSTGRES_DB: menu_vote
+      POSTGRES_USER: menu_vote
+      POSTGRES_PASS: menu_vote
+    env_file:
+      - .env/local/django
+    networks:
+      - menu-vote_postgres
+#      - default
+    volumes:
+      - .:/app
+      - ./media:/app/media
+    command: >
+      bash -c "./manage.py migrate &&
+               ./manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres:12
+    networks:
+      - menu-vote_postgres
+    env_file:
+      - .env/local/postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data/pgdata
+
+networks:
+#  postgres:
+#    driver: bridge
+  menu-vote_postgres:
+    external: true
+volumes:
+  db:

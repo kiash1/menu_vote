@@ -1,0 +1,12 @@
+__pycache__
+*.py[cod]
+*$py.class
+dist
+build
+.idea
+*.md
+__pycache__
+**/*.pyc
+Dockerfile
+.env
+*.yml
